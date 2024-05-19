@@ -1,0 +1,38 @@
+{% include 'header.html' %}
+    <main id="main" class="main">
+
+        <div class="pagetitle">
+            <h1>Dashboard</h1>
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="dashboard.html">Home</a></li>
+                    <li class="breadcrumb-item active">Dashboard</li>
+                </ol>
+            </nav>
+        </div><!-- End Page Title -->
+
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+
+            <!-- looping --->
+            {% for fruit in fruits %}
+            <div class="col">
+                <div class="card">
+                    <img src="../static/assets/Imagefruit/{{fruit.gambar}}" class="card-img-top"
+                        alt="{{fruit.nama}}" />
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <h5 class="card-title">{{fruit.nama}}</h5>
+                            <h5 class="card-title" style="color: brown;">{{fruit.harga}}</h5>
+                        </div>
+                        <p class="card-text">
+                            {{fruit.deskripsi}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            <!-- looping --->
+
+        </div>
+    </main>
+{% include 'footer.html' %}
